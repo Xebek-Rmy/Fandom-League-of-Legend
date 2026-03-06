@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends - Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">LEAGUE OF LEGENDS</div>
+            
+            <!-- Menu hamburger -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation -->
+            <nav id="navMenu">
+                <ul>
+                    <li><button class="nav-btn active" onclick="window.location.href='index.html'">ACCUEIL</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='champion index.html'">CHAMPIONS</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='mode index.html'">MODES DE JEU</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='e-rank index.html'">CLASSEMENT</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='contact index.html'">CONTACT</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Overlay pour mobile -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- banniere pour mobile -->
+    <div class="banner-left">
+        <div class="banner-content">
+            <img src="image lol/Ahri lol.jpg" alt="Ahri">
+            <img src="image lol/Yasuo lol.jpg" alt="Yasuo">
+            <img src="image lol/luxx.jpg" alt="Lux">
+            <img src="image lol/Kayn_15.webp" alt="Kayn">
+            <img src="image lol/MasterYi_42.jpg" alt="Maitre yi">
+        </div>
+    </div>
+
+    <div class="banner-right">
+        <div class="banner-content">
+            <img src="image lol/Darius_65.jpg" alt="Darius">
+            <img src="image lol/Thresh lol.jpg" alt="Thresh">
+            <img src="image lol/Zed_69.jpg" alt="Zed">
+            <img src="image lol/zenin.png" alt="Zenin">
+            <img src="image lol/Ekko_46.jpg" alt="ekko">
+        </div>
+    </div>
+
+    <!-- Carrousel Bootstrap-->
+    <div class="carousel-container">
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-custom" data-bs-ride="carousel">
+            <div class="carousel-inner rounded-carousel">
+                <div class="carousel-item active">
+                    <img src="image lol/lol image 1.jpg" class="d-block w-100" alt="League of Legends 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="image lol/lol image 2.webp" class="d-block w-100" alt="League of Legends 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="image lol/lol image 3.jpg" class="d-block w-100" alt="League of Legends 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="image lol/lol image 4.jpg" class="d-block w-100" alt="League of Legends 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="image lol/lol image 5.jpg" class="d-block w-100" alt="League of Legends 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="image lol/image 6.jpg" class="d-block w-100" alt="League of Legends 6">
+                </div>
+            </div>
+            
+            <!-- Contrôles -->
+            <button class="carousel-control-prev custom-control" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next custom-control" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <h1>Bienvenue dans la Faille de l'Invocateur</h1>
+            <p class="lead">
+                Plongez dans l'univers légendaire de League of Legends, le jeu de stratégie en équipe le plus populaire au monde.
+                Découvrez des champions aux capacités uniques, maîtrisez les différentes lanes et atteignez le rang de Challenger !
+            </p>
+
+            <div class="feature-section">
+                <h2 class="mb-4">Caractéristiques du Jeu</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-users"></i>
+                            <h4>140+ Champions</h4>
+                            <p>Chaque champion possède son propre style de jeu et ses capacités uniques.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-map"></i>
+                            <h4>Cartes Variées</h4>
+                            <p>De la Faille de l'Invocateur à l'Abîme hurlant, chaque carte offre une expérience unique.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-trophy"></i>
+                            <h4>Mode Classé</h4>
+                            <p>Compétition intense pour atteindre le rang de Challenger.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="mt-5">Champions Populaires</h2>
+            <div class="champion-grid">
+                <div class="champion-item"><img src="image lol/Ahri lol.jpg" alt="Ahri"><p>Ahri</p></div>
+                <div class="champion-item"><img src="image lol/Yasuo lol.jpg" alt="Yasuo"><p>Yasuo</p></div>
+                <div class="champion-item"><img src="image lol/Jinx lol.jpg" alt="Jinx"><p>Jinx</p></div>
+                <div class="champion-item"><img src="image lol/treesh.webp" alt="Thresh"><p>Thresh</p></div>
+            </div>
+        </div>
+    </main>
+
+
+     <!-- les info enbas de la pages-->
+    <footer>
+        <div class="contact-info">
+            <span>Email: hasha-rank@League.com</span>
+            <span>Tél: +33 1 02 03 04 05</span>
+            <span>Localisation: Paris, France</span>
+            <span>© 2026 League of Legends Fan Site</span>
+        </div>
+    </footer>
+
+    <!-- JavaScript pour le menu hamburger -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function openMenu() {
+                hamburger.classList.add('active');
+                navMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (hamburger.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            menuOverlay.addEventListener('click', closeMenu);
+
+            // Fermer le menu quand on redimensionne au-dessus de 992px
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
