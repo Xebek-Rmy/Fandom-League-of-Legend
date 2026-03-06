@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends - Champions de la Faille</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/champion style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">LEAGUE OF LEGENDS</div>
+            
+            <!-- Menu hamburger -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation -->
+            <nav id="navMenu">
+                <ul>
+                    <li><button class="nav-btn" onclick="window.location.href='index.html'">ACCUEIL</button></li>
+                    <li><button class="nav-btn active" onclick="window.location.href='champion index.html'">CHAMPIONS</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='mode index.html'">MODES DE JEU</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='e-rank index.html'">CLASSEMENT</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='contact index.html'">CONTACT</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Overlay pour mobile -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- banniere pour mobile -->
+    <div class="banner-left">
+        <div class="banner-content">
+            <img src="image lol/Ahri lol.jpg" alt="Ahri">
+            <img src="image lol/Yasuo lol.jpg" alt="Yasuo">
+            <img src="image lol/luxx.jpg" alt="Lux">
+            <img src="image lol/Kayn_15.webp" alt="Kayn">
+            <img src="image lol/MasterYi_42.jpg" alt="Maitre yi">
+        </div>
+    </div>
+
+    <div class="banner-right">
+        <div class="banner-content">
+            <img src="image lol/Darius_65.jpg" alt="Darius">
+            <img src="image lol/Thresh lol.jpg" alt="Thresh">
+            <img src="image lol/Zed_69.jpg" alt="Zed">
+            <img src="image lol/zenin.png" alt="Zenin">
+            <img src="image lol/Ekko_46.jpg" alt="ekko">
+        </div>
+    </div>
+
+    <main class="main-centered">
+        <!-- En-tête de page avec statistiques -->
+        <div class="page-header">
+            <h1>
+                <i class="fas fa-chess-knight"></i> 
+                CHAMPIONS DE LA FAILLE 
+                <i class="fas fa-chess-knight"></i>
+            </h1>
+            <p class="subtitle">Découvrez tous les champions légendaires de League of Legends</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-value">168</span>
+                    <span class="stat-label">Champions</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">6</span>
+                    <span class="stat-label">Classes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">Rôles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">15</span>
+                    <span class="stat-label">Années</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barre de recherche et filtres -->
+        <div class="filters-section">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="championSearch" placeholder="Rechercher un champion...">
+            </div>
+
+            <div class="role-filters">
+                <button class="role-filter active" data-filter="all">
+                    <i class="fas fa-globe"></i> Tous
+                </button>
+                <button class="role-filter" data-filter="fighter">
+                    <i class="fas fa-fist-raised"></i> Combattant
+                </button>
+                <button class="role-filter" data-filter="mage">
+                    <i class="fas fa-magic"></i> Mage
+                </button>
+                <button class="role-filter" data-filter="assassin">
+                    <i class="fas fa-dagger"></i> Assassin
+                </button>
+                <button class="role-filter" data-filter="tank">
+                    <i class="fas fa-shield-alt"></i> Tank
+                </button>
+                <button class="role-filter" data-filter="marksman">
+                    <i class="fas fa-bullseye"></i> Tireur
+                </button>
+                <button class="role-filter" data-filter="support">
+                    <i class="fas fa-heart"></i> Support
+                </button>
+                <button class="role-filter" data-filter="berserker">
+                    <i class="fas fa-skull"></i> Berserker
+                </button>
+                <button class="role-filter" data-filter="special">
+                    <i class="fas fa-star"></i> Spécial
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="quick-stats">
+            <div class="quick-stat-card">
+                <i class="fas fa-fist-raised" style="color: #CD7F4B;"></i>
+                <span>42 Combattants</span>
+            </div>
+            <div class="quick-stat-card">
+                <i class="fas fa-magic" style="color: #2E6E9E;"></i>
+                <span>38 Mages</span>
+            </div>
+            <div class="quick-stat-card">
+                <i class="fas fa-dagger" style="color: #A32323;"></i>
+                <span>26 Assassins</span>
+            </div>
+            <div class="quick-stat-card">
+                <i class="fas fa-shield-alt" style="color: #4A5A6E;"></i>
+                <span>24 Tanks</span>
+            </div>
+            <div class="quick-stat-card">
+                <i class="fas fa-bullseye" style="color: #B8860B;"></i>
+                <span>22 Tireurs</span>
+            </div>
+            <div class="quick-stat-card">
+                <i class="fas fa-heart" style="color: #1E7A5E;"></i>
+                <span>16 Supports</span>
+            </div>
+        </div>
+
+        <!-- Titre de section -->
+        <h2 class="section-title">
+            <i class="fas fa-list"></i>
+            LISTE COMPLÈTE DES CHAMPIONS
+            <i class="fas fa-list"></i>
+        </h2>
+
+        <!-- Tableau des champions (contenu existant) -->
+        <div class="table-wrapper">
+            <table class="champions-table" id="championTable">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>CHAMPION</th>
+                        <th>CLASSE</th>
+                        <th>N°</th>
+                        <th>CHAMPION</th>
+                        <th>CLASSE</th>
+                    </tr>
+                    <!-- Ligne 1-2 -->
+                    <tr>
+                        <td class="number">1</td>
+                        <td class="champion-name"><i class="fas fa-khanda"></i> AATROX</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">2</td>
+                        <td class="champion-name"><i class="fas fa-fox"></i> AHRI</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 3-4 -->
+                    <tr>
+                        <td class="number">3</td>
+                        <td class="champion-name"><i class="fas fa-dagger"></i> AKALI</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">4</td>
+                        <td class="champion-name"><i class="fas fa-gun"></i> AKSHAN</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                    </tr>
+                    <!-- Ligne 5-6 -->
+                    <tr>
+                        <td class="number">5</td>
+                        <td class="champion-name"><i class="fas fa-shield"></i> ALISTAR</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">6</td>
+                        <td class="champion-name"><i class="fas fa-sad-tear"></i> AMUMU</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 7-8 -->
+                    <tr>
+                        <td class="number">7</td>
+                        <td class="champion-name"><i class="fas fa-dove"></i> ANIVIA</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                        <td class="number">8</td>
+                        <td class="champion-name"><i class="fas fa-fire"></i> ANNIE</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 9-10 -->
+                    <tr>
+                        <td class="number">9</td>
+                        <td class="champion-name"><i class="fas fa-moon"></i> APHELIOS</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                        <td class="number">10</td>
+                        <td class="champion-name"><i class="fas fa-snowflake"></i> ASHE</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 11-12 -->
+                    <tr>
+                        <td class="number">11</td>
+                        <td class="champion-name"><i class="fas fa-dragon"></i> AURELION SOL</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                        <td class="number">12</td>
+                        <td class="champion-name"><i class="fas fa-crown"></i> AZIR</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 13-14 -->
+                    <tr>
+                        <td class="number">13</td>
+                        <td class="champion-name"><i class="fas fa-music"></i> BARD</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">14</td>
+                        <td class="champion-name"><i class="fas fa-robot"></i> BLITZCRANK</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 15-16 -->
+                    <tr>
+                        <td class="number">15</td>
+                        <td class="champion-name"><i class="fas fa-fire"></i> BRAND</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                        <td class="number">16</td>
+                        <td class="champion-name"><i class="fas fa-ice"></i> BRAUM</td>
+                        <td><span class="role-badge support">Support</span></td>
+                    </tr>
+                    <!-- Ligne 17-18 -->
+                    <tr>
+                        <td class="number">17</td>
+                        <td class="champion-name"><i class="fas fa-gun"></i> CAITLYN</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                        <td class="number">18</td>
+                        <td class="champion-name"><i class="fas fa-robot"></i> CAMILLE</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 19-20 -->
+                    <tr>
+                        <td class="number">19</td>
+                        <td class="champion-name"><i class="fas fa-snake"></i> CASSIOPEIA</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                        <td class="number">20</td>
+                        <td class="champion-name"><i class="fas fa-dragon"></i> CHO'GATH</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 21-22 -->
+                    <tr>
+                        <td class="number">21</td>
+                        <td class="champion-name"><i class="fas fa-fighter-jet"></i> CORKI</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                        <td class="number">22</td>
+                        <td class="champion-name"><i class="fas fa-axe"></i> DARIUS</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 23-24 -->
+                    <tr>
+                        <td class="number">23</td>
+                        <td class="champion-name"><i class="fas fa-moon"></i> DIANA</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">24</td>
+                        <td class="champion-name"><i class="fas fa-flask"></i> DR. MUNDO</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 25-26 -->
+                    <tr>
+                        <td class="number">25</td>
+                        <td class="champion-name"><i class="fas fa-axe"></i> DRAVEN</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                        <td class="number">26</td>
+                        <td class="champion-name"><i class="fas fa-clock"></i> EKKO</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                    </tr>
+                    <!-- Ligne 27-28 -->
+                    <tr>
+                        <td class="number">27</td>
+                        <td class="champion-name"><i class="fas fa-heart"></i> EVELYNN</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">28</td>
+                        <td class="champion-name"><i class="fas fa-bow-arrow"></i> EZREAL</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 29-30 -->
+                    <tr>
+                        <td class="number">29</td>
+                        <td class="champion-name"><i class="fas fa-crow"></i> FIDDLESTICKS</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                        <td class="number">30</td>
+                        <td class="champion-name"><i class="fas fa-sword"></i> FIORA</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 31-32 -->
+                    <tr>
+                        <td class="number">31</td>
+                        <td class="champion-name"><i class="fas fa-fish"></i> FIZZ</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">32</td>
+                        <td class="champion-name"><i class="fas fa-gargoyle"></i> GALIO</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 33-34 -->
+                    <tr>
+                        <td class="number">33</td>
+                        <td class="champion-name"><i class="fas fa-skull"></i> GANGPLANK</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">34</td>
+                        <td class="champion-name"><i class="fas fa-shield"></i> GAREN</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 35-36 -->
+                    <tr>
+                        <td class="number">35</td>
+                        <td class="champion-name"><i class="fas fa-paw"></i> GNAR</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">36</td>
+                        <td class="champion-name"><i class="fas fa-beer"></i> GRAGAS</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 37-38 -->
+                    <tr>
+                        <td class="number">37</td>
+                        <td class="champion-name"><i class="fas fa-gun"></i> GRAVES</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                        <td class="number">38</td>
+                        <td class="champion-name"><i class="fas fa-cut"></i> GWEN</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 39-40 -->
+                    <tr>
+                        <td class="number">39</td>
+                        <td class="champion-name"><i class="fas fa-horse"></i> HECARIM</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">40</td>
+                        <td class="champion-name"><i class="fas fa-robot"></i> HEIMERDINGER</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 41-42 -->
+                    <tr>
+                        <td class="number">41</td>
+                        <td class="champion-name"><i class="fas fa-paint-brush"></i> HWEI</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                        <td class="number">42</td>
+                        <td class="champion-name"><i class="fas fa-anchor"></i> ILLAOI</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 43-44 -->
+                    <tr>
+                        <td class="number">43</td>
+                        <td class="champion-name"><i class="fas fa-sword"></i> IRELIA</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">44</td>
+                        <td class="champion-name"><i class="fas fa-tree"></i> IVERN</td>
+                        <td><span class="role-badge support">Support</span></td>
+                    </tr>
+                    <!-- Ligne 45-46 -->
+                    <tr>
+                        <td class="number">45</td>
+                        <td class="champion-name"><i class="fas fa-wind"></i> JANNA</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">46</td>
+                        <td class="champion-name"><i class="fas fa-flag"></i> JARVAN IV</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 47-48 -->
+                    <tr>
+                        <td class="number">47</td>
+                        <td class="champion-name"><i class="fas fa-lamp"></i> JAX</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">48</td>
+                        <td class="champion-name"><i class="fas fa-gun"></i> JHIN</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 49-50 -->
+                    <tr>
+                        <td class="number">49</td>
+                        <td class="champion-name"><i class="fas fa-bomb"></i> JINX</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                        <td class="number">50</td>
+                        <td class="champion-name"><i class="fas fa-dragon"></i> KAI'SA</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 51-52 -->
+                    <tr>
+                        <td class="number">51</td>
+                        <td class="champion-name"><i class="fas fa-spear"></i> KALISTA</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                        <td class="number">52</td>
+                        <td class="champion-name"><i class="fas fa-pray"></i> KARMA</td>
+                        <td><span class="role-badge support">Support</span></td>
+                    </tr>
+                    <!-- Ligne 53-54 -->
+                    <tr>
+                        <td class="number">53</td>
+                        <td class="champion-name"><i class="fas fa-skull"></i> KARTHUS</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                        <td class="number">54</td>
+                        <td class="champion-name"><i class="fas fa-dagger"></i> KASSADIN</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                    </tr>
+                    <!-- Ligne 55-56 -->
+                    <tr>
+                        <td class="number">55</td>
+                        <td class="champion-name"><i class="fas fa-dagger"></i> KATARINA</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">56</td>
+                        <td class="champion-name"><i class="fas fa-angel"></i> KAYLE</td>
+                        <td><span class="role-badge special">Spécial</span></td>
+                    </tr>
+                    <!-- Ligne 57-58 -->
+                    <tr>
+                        <td class="number">57</td>
+                        <td class="champion-name"><i class="fas fa-scythe"></i> KAYN</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">58</td>
+                        <td class="champion-name"><i class="fas fa-bolt"></i> KENNEN</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 59-60 -->
+                    <tr>
+                        <td class="number">59</td>
+                        <td class="champion-name"><i class="fas fa-bug"></i> KHA'ZIX</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">60</td>
+                        <td class="champion-name"><i class="fas fa-wolf"></i> KINDRED</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 61-62 -->
+                    <tr>
+                        <td class="number">61</td>
+                        <td class="champion-name"><i class="fas fa-horse"></i> KLED</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">62</td>
+                        <td class="champion-name"><i class="fas fa-bug"></i> KOG'MAW</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 63-64 -->
+                    <tr>
+                        <td class="number">63</td>
+                        <td class="champion-name"><i class="fas fa-mask"></i> LEBLANC</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">64</td>
+                        <td class="champion-name"><i class="fas fa-fist"></i> LEE SIN</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 65-66 -->
+                    <tr>
+                        <td class="number">65</td>
+                        <td class="champion-name"><i class="fas fa-shield"></i> LEONA</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">66</td>
+                        <td class="champion-name"><i class="fas fa-deer"></i> LILLIA</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 67-68 -->
+                    <tr>
+                        <td class="number">67</td>
+                        <td class="champion-name"><i class="fas fa-ice"></i> LISSANDRA</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                        <td class="number">68</td>
+                        <td class="champion-name"><i class="fas fa-gun"></i> LUCIAN</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 69-70 -->
+                    <tr>
+                        <td class="number">69</td>
+                        <td class="champion-name"><i class="fas fa-fairy"></i> LULU</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">70</td>
+                        <td class="champion-name"><i class="fas fa-light"></i> LUX</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 71-72 -->
+                    <tr>
+                        <td class="number">71</td>
+                        <td class="champion-name"><i class="fas fa-rock"></i> MALPHITE</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                        <td class="number">72</td>
+                        <td class="champion-name"><i class="fas fa-bug"></i> MALZAHAR</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 73-74 -->
+                    <tr>
+                        <td class="number">73</td>
+                        <td class="champion-name"><i class="fas fa-tree"></i> MAOKAI</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                        <td class="number">74</td>
+                        <td class="champion-name"><i class="fas fa-sword"></i> MASTER YI</td>
+                        <td><span class="role-badge berserker">Berserker</span></td>
+                    </tr>
+                    <!-- Ligne 75-76 -->
+                    <tr>
+                        <td class="number">75</td>
+                        <td class="champion-name"><i class="fas fa-gun"></i> MISS FORTUNE</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                        <td class="number">76</td>
+                        <td class="champion-name"><i class="fas fa-skull"></i> MORDEKAISER</td>
+                        <td><span class="role-badge special">Spécial</span></td>
+                    </tr>
+                    <!-- Ligne 77-78 -->
+                    <tr>
+                        <td class="number">77</td>
+                        <td class="champion-name"><i class="fas fa-angel"></i> MORGANA</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">78</td>
+                        <td class="champion-name"><i class="fas fa-dog"></i> NAAFIRI</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                    </tr>
+                    <!-- Ligne 79-80 -->
+                    <tr>
+                        <td class="number">79</td>
+                        <td class="champion-name"><i class="fas fa-fish"></i> NAMI</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">80</td>
+                        <td class="champion-name"><i class="fas fa-dog"></i> NASUS</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 81-82 -->
+                    <tr>
+                        <td class="number">81</td>
+                        <td class="champion-name"><i class="fas fa-anchor"></i> NAUTILUS</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">82</td>
+                        <td class="champion-name"><i class="fas fa-leaf"></i> NEEKO</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 83-84 -->
+                    <tr>
+                        <td class="number">83</td>
+                        <td class="champion-name"><i class="fas fa-paw"></i> NIDALEE</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">84</td>
+                        <td class="champion-name"><i class="fas fa-gun"></i> NILAH</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 85-86 -->
+                    <tr>
+                        <td class="number">85</td>
+                        <td class="champion-name"><i class="fas fa-moon"></i> NOCTURNE</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">86</td>
+                        <td class="champion-name"><i class="fas fa-snowman"></i> NUNU</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 87-88 -->
+                    <tr>
+                        <td class="number">87</td>
+                        <td class="champion-name"><i class="fas fa-axe"></i> OLAF</td>
+                        <td><span class="role-badge berserker">Berserker</span></td>
+                        <td class="number">88</td>
+                        <td class="champion-name"><i class="fas fa-robot"></i> ORIANNA</td>
+                        <td><span class="role-badge mage">Mage</span></td>
+                    </tr>
+                    <!-- Ligne 89-90 -->
+                    <tr>
+                        <td class="number">89</td>
+                        <td class="champion-name"><i class="fas fa-hammer"></i> ORNNA</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                        <td class="number">90</td>
+                        <td class="champion-name"><i class="fas fa-shield"></i> PANTHEON</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                    <!-- Ligne 91-92 -->
+                    <tr>
+                        <td class="number">91</td>
+                        <td class="champion-name"><i class="fas fa-hammer"></i> POPPY</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                        <td class="number">92</td>
+                        <td class="champion-name"><i class="fas fa-hook"></i> PYKE</td>
+                        <td><span class="role-badge support">Support</span></td>
+                    </tr>
+                    <!-- Ligne 93-94 -->
+                    <tr>
+                        <td class="number">93</td>
+                        <td class="champion-name"><i class="fas fa-dagger"></i> QIYANA</td>
+                        <td><span class="role-badge assassin">Assassin</span></td>
+                        <td class="number">94</td>
+                        <td class="champion-name"><i class="fas fa-eagle"></i> QUINN</td>
+                        <td><span class="role-badge marksman">Tireur</span></td>
+                    </tr>
+                    <!-- Ligne 95-96 -->
+                    <tr>
+                        <td class="number">95</td>
+                        <td class="champion-name"><i class="fas fa-feather"></i> RAKAN</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">96</td>
+                        <td class="champion-name"><i class="fas fa-armadillo"></i> RAMMUS</td>
+                        <td><span class="role-badge tank">Tank</span></td>
+                    </tr>
+                    <!-- Ligne 97-98 -->
+                    <tr>
+                        <td class="number">97</td>
+                        <td class="champion-name"><i class="fas fa-bug"></i> REK'SAI</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                        <td class="number">98</td>
+                        <td class="champion-name"><i class="fas fa-horse"></i> RELL</td>
+                        <td><span class="role-badge support">Support</span></td>
+                    </tr>
+                    <!-- Ligne 99-100 -->
+                    <tr>
+                        <td class="number">99</td>
+                        <td class="champion-name"><i class="fas fa-flask"></i> RENATA</td>
+                        <td><span class="role-badge support">Support</span></td>
+                        <td class="number">100</td>
+                        <td class="champion-name"><i class="fas fa-crocodile"></i> RENEKTON</td>
+                        <td><span class="role-badge fighter">Combattant</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+                </thead>
+                <tbody>
+                    <!-- Votre tableau existant avec tous les champions -->
+                    <!-- ... (contenu inchangé) ... -->
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+        
+
+        <!-- Légende des classes -->
+        <div class="legend-section">
+            <h3><i class="fas fa-info-circle"></i> LÉGENDE DES CLASSES</h3>
+            <div class="legend-grid">
+                <div class="legend-card">
+                    <span class="legend-color fighter"></span>
+                    <span class="legend-text">Combattant - Mêlée polyvalent, dégâts et tenacité</span>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-color mage"></span>
+                    <span class="legend-text">Mage - Dégâts magiques à distance, contrôle</span>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-color assassin"></span>
+                    <span class="legend-text">Assassin - Burst et mobilité, élimination rapide</span>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-color tank"></span>
+                    <span class="legend-text">Tank - Protection, contrôle de foule, encaissement</span>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-color marksman"></span>
+                    <span class="legend-text">Tireur - Dégâts physiques continus à distance</span>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-color support"></span>
+                    <span class="legend-text">Support - Utilité, soins, protection de l'équipe</span>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-color berserker"></span>
+                    <span class="legend-text">Berserker - Furie déchaînée, attaques rapides</span>
+                </div>
+                <div class="legend-card">
+                    <span class="legend-color special"></span>
+                    <span class="legend-text">Spécial - Mécaniques uniques, hybrides</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Champions populaires -->
+        <div class="popular-section">
+            <h3><i class="fas fa-star"></i> CHAMPIONS POPULAIRES</h3>
+            <div class="popular-grid">
+                <div class="popular-card">
+                    <img src="image lol/Yasuo lol.jpg" alt="Yasuo">
+                    <div class="popular-overlay">
+                        <h4>YASUO</h4>
+                        <span class="badge assassin">Assassin</span>
+                        <span class="popular-rate">Pick rate: 32%</span>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="image lol/luxx.jpg" alt="Lux">
+                    <div class="popular-overlay">
+                        <h4>LUX</h4>
+                        <span class="badge mage">Mage</span>
+                        <span class="popular-rate">Pick rate: 28%</span>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="image lol/Jinx lol.jpg" alt="Jinx">
+                    <div class="popular-overlay">
+                        <h4>JINX</h4>
+                        <span class="badge marksman">Tireur</span>
+                        <span class="popular-rate">Pick rate: 25%</span>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="image lol/Thresh lol.jpg" alt="Thresh">
+                    <div class="popular-overlay">
+                        <h4>THRESH</h4>
+                        <span class="badge support">Support</span>
+                        <span class="popular-rate">Pick rate: 24%</span>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="image lol/Ahri lol.jpg" alt="Ahri">
+                    <div class="popular-overlay">
+                        <h4>AHRI</h4>
+                        <span class="badge mage">Mage</span>
+                        <span class="popular-rate">Pick rate: 23%</span>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <img src="image lol/Darius_65.jpg" alt="Darius">
+                    <div class="popular-overlay">
+                        <h4>DARIUS</h4>
+                        <span class="badge fighter">Combattant</span>
+                        <span class="popular-rate">Pick rate: 22%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-btn-bottom">
+            <button class="nav-btn back-nav-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i>  RETOUR À L'ACCUEIL
+            </button>
+        </div>
+    </main>
+
+
+    <!-- les info enbas de la pages-->
+    <footer>
+        <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> hasha-rank@League.com</span>
+            <span><i class="fas fa-phone"></i> +33 1 02 03 04 05</span>
+            <span><i class="fas fa-map-marker-alt"></i> Paris, France</span>
+            <span><i class="far fa-copyright"></i> 2026 League of Legends Fan Site</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function openMenu() {
+                hamburger.classList.add('active');
+                navMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (hamburger.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            menuOverlay.addEventListener('click', closeMenu);
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

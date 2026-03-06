@@ -1,0 +1,741 @@
+/* style.css - Thème Principal League of Legends (V3 - Harmonisé) */
+
+:root {
+    --lol-dark-blue: #010A13;
+    --lol-deep-blue: #0A1A2F;
+    --lol-navy: #0E1D33;
+    --lol-gold: #C89B3C;
+    --lol-soft-gold: #F0E6D2;
+    --lol-steel: #5B6A7C;
+    --lol-charcoal: #1E2A3E;
+    --lol-dark-gray: #1C2A44;
+    --lol-light-gray: #A1A6B4;
+    --lol-ivory: #F8F4E9;
+    --lol-purple: #8A6CD9;
+    --lol-teal: #16C8BB;
+    --lol-blue: #2680C2;
+    --lol-light-blue: #6FB2E8;
+    
+    --glow-gold: 0 0 15px rgba(200, 155, 60, 0.7);
+    --glow-blue: 0 0 20px rgba(38, 128, 194, 0.6);
+    --border-light: 1px solid rgba(200, 155, 60, 0.3);
+    --card-bg: rgba(10, 26, 47, 0.85);
+    --gradient-gold: linear-gradient(135deg, var(--lol-gold), #E5C687);
+    --gradient-blue: linear-gradient(135deg, var(--lol-blue), #3A5F8A);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(ellipse at top, var(--lol-deep-blue) 0%, var(--lol-dark-blue) 100%);
+    color: var(--lol-soft-gold);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/><feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.08 0"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.15"/></svg>');
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, 
+                rgba(200, 155, 60, 0.05) 0%, 
+                rgba(0, 0, 0, 0.3) 50%, 
+                transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ----- NAVBAR AMÉLIORÉE AVEC MENU SANDWICH ----- */
+header {
+    background: rgba(1, 10, 19, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--lol-soft-gold);
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--lol-gold);
+    border-bottom: 2px solid var(--lol-gold);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8), 0 0 20px rgba(200,155,60,0.4);
+    letter-spacing: 3px;
+    white-space: nowrap;
+    z-index: 1001;
+}
+
+/* Menu hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    background: transparent;
+    border: 2px solid var(--lol-gold);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+    background: rgba(200, 155, 60, 0.2);
+    transform: scale(1.05);
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: var(--lol-gold);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Navigation */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--lol-light-gray);
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--gradient-blue);
+    transition: all 0.3s ease;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.nav-btn:hover {
+    color: var(--lol-soft-gold);
+    transform: translateY(-2px);
+    text-shadow: var(--glow-blue);
+}
+
+.nav-btn:hover::before {
+    height: 100%;
+}
+
+.nav-btn.active {
+    background: var(--gradient-blue);
+    color: var(--lol-soft-gold);
+    box-shadow: var(--glow-blue);
+    border: 1px solid var(--lol-gold);
+}
+
+/* Menu overlay pour mobile */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 10, 19, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ----- RESPONSIVE DESIGN POUR LE MENU SANDWICH ----- */
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: rgba(1, 10, 19, 0.98);
+        backdrop-filter: blur(10px);
+        border-left: 2px solid var(--lol-gold);
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.7);
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: left;
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        border: 1px solid rgba(200, 155, 60, 0.3);
+    }
+
+    .nav-btn:hover {
+        transform: translateX(10px);
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .hamburger span {
+        width: 25px;
+    }
+}
+
+/* ----- RESTE DU CSS (INCHANGÉ) ----- */
+/* BOUTON RETOUR */
+.back-nav-btn {
+    background: rgba(30, 42, 62, 0.5);
+    border: 2px solid var(--lol-gold);
+    color: var(--lol-soft-gold);
+    padding: 12px 35px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    min-width: 250px;
+}
+
+.back-nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--lol-gold), #e6d5a8);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.back-nav-btn:hover {
+    color: var(--lol-dark-blue);
+    border-color: var(--lol-gold);
+    transform: translateX(-5px);
+    box-shadow: var(--glow-gold);
+    background: transparent;
+}
+
+.back-btn-bottom {
+    text-align: center;
+    margin: 60px 0 20px;
+}
+
+/* BANNIÈRES LATÉRALES */
+.banner-left, .banner-right {
+    position: fixed;
+    top: 120px;
+    width: 200px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.banner-left {
+    left: 20px;
+}
+
+.banner-right {
+    right: 20px;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.banner-content img {
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid var(--lol-gold);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.banner-content img:hover {
+    transform: scale(1.1) translateX(10px);
+    border-color: var(--lol-blue);
+    box-shadow: 0 0 30px var(--lol-gold);
+}
+
+.banner-right .banner-content img:hover {
+    transform: scale(1.1) translateX(-10px);
+}
+
+/* PAGE HEADER */
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-header h1 {
+    color: var(--lol-gold);
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 0 #000, var(--glow-gold);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 4px;
+    position: relative;
+    display: inline-block;
+}
+
+.page-header h1:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--lol-gold), var(--lol-blue), var(--lol-gold), transparent);
+    border-radius: 2px;
+}
+
+.page-header p {
+    color: var(--lol-light-gray);
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/* FOOTER */
+footer {
+    background: rgba(1, 10, 19, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid var(--lol-gold);
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--lol-soft-gold);
+    margin-top: auto;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--lol-light-gray);
+    background: rgba(14, 29, 51, 0.7);
+    padding: 8px 20px;
+    border-radius: 40px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(200, 155, 60, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.contact-info span:hover {
+    border-color: var(--lol-gold);
+}
+
+.contact-info span:before {
+    content: '✦';
+    color: var(--lol-gold);
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--lol-dark-blue);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--lol-gold);
+    border-radius: 6px;
+    border: 2px solid var(--lol-dark-blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lol-soft-gold);
+}
+
+/* RESPONSIVE GLOBAL */
+@media (max-width: 1600px) {
+    .banner-left, .banner-right {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+}
+
+/* STYLES SPÉCIFIQUES À LA PAGE D'ACCUEIL */
+.main-content {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--card-bg);
+    margin: 2rem auto;
+    max-width: 1400px;
+    border-radius: 20px;
+    border: var(--border-light);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.feature-section h2, .main-content h2 {
+    color: var(--lol-gold);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--lol-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    background: rgba(14, 29, 51, 0.7);
+    border: var(--border-light);
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    margin: 1rem 0;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    color: var(--lol-light-gray);
+    height: 100%;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--lol-gold);
+    box-shadow: 0 15px 35px rgba(200, 155, 60, 0.4);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+    color: var(--lol-soft-gold);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.champion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.champion-item {
+    background: rgba(1, 10, 19, 0.9);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    position: relative;
+}
+
+.champion-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(145deg, var(--lol-gold), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.champion-item:hover {
+    transform: scale(1.05);
+    border-color: transparent;
+}
+
+.champion-item:hover::before {
+    opacity: 1;
+}
+
+.champion-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: brightness(0.9) saturate(1.2);
+    transition: filter 0.3s;
+}
+
+.champion-item:hover img {
+    filter: brightness(1.1) saturate(1.4);
+}
+
+.champion-item p {
+    padding: 1rem;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--lol-soft-gold);
+    text-transform: uppercase;
+    background: linear-gradient(to top, var(--lol-dark-blue), transparent);
+}
+
+/* CARROUSEL */
+.carousel-container {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-custom {
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 0 2px var(--lol-gold), 0 0 20px rgba(200, 155, 60, 0.5);
+    transition: all 0.3s ease;
+    background: var(--lol-dark-blue);
+}
+
+.carousel-custom:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 0 3px var(--lol-gold), 0 0 30px rgba(200, 155, 60, 0.8);
+}
+
+.rounded-carousel {
+    border-radius: 25px;
+}
+
+.rounded-carousel .carousel-item img {
+    border-radius: 25px;
+    transition: transform 0.5s ease;
+}
+
+.rounded-carousel .carousel-item img:hover {
+    transform: scale(1.02);
+}
+
+.custom-control {
+    width: 50px;
+    height: 50px;
+    background: rgba(10, 26, 47, 0.7);
+    border: 2px solid var(--lol-gold);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    margin: 0 10px;
+}
+
+.custom-control:hover {
+    background: var(--lol-gold);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 20px var(--lol-gold);
+}
+
+.custom-control .carousel-control-prev-icon,
+.custom-control .carousel-control-next-icon {
+    filter: brightness(0) invert(1);
+}
+
+.custom-control:hover .carousel-control-prev-icon,
+.custom-control:hover .carousel-control-next-icon {
+    filter: brightness(0);
+}
+
+.custom-indicators {
+    bottom: 20px;
+}
+
+.custom-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--lol-light-gray);
+    border: 2px solid var(--lol-gold);
+    margin: 0 8px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.custom-indicators button.active {
+    background-color: var(--lol-gold);
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 15px var(--lol-gold);
+}
+
+.custom-indicators button:hover {
+    background-color: var(--lol-soft-gold);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.carousel-custom::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 70%, rgba(1, 10, 19, 0.8) 100%);
+    pointer-events: none;
+    border-radius: 25px;
+    z-index: 1;
+}
+
+@keyframes carouselAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-custom {
+    animation: carouselAppear 0.8s ease-out;
+}

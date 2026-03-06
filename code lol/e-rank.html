@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends - Classement des Légendes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/e-rank style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">LEAGUE OF LEGENDS</div>
+            
+            <!-- Menu hamburger -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation -->
+            <nav id="navMenu">
+                <ul>
+                    <li><button class="nav-btn" onclick="window.location.href='index.html'">ACCUEIL</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='champion index.html'">CHAMPIONS</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='mode index.html'">MODES DE JEU</button></li>
+                    <li><button class="nav-btn active" onclick="window.location.href='e-rank index.html'">CLASSEMENT</button></li>
+                    <li><button class="nav-btn" onclick="window.location.href='contact index.html'">CONTACT</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Overlay pour mobile -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- banniere pour mobile -->
+    <div class="banner-left">
+        <div class="banner-content">
+            <img src="image lol/Ahri lol.jpg" alt="Ahri">
+            <img src="image lol/Yasuo lol.jpg" alt="Yasuo">
+            <img src="image lol/luxx.jpg" alt="Lux">
+            <img src="image lol/Kayn_15.webp" alt="Kayn">
+            <img src="image lol/MasterYi_42.jpg" alt="Maitre yi">
+        </div>
+    </div>
+
+    <div class="banner-right">
+        <div class="banner-content">
+            <img src="image lol/Darius_65.jpg" alt="Darius">
+            <img src="image lol/Thresh lol.jpg" alt="Thresh">
+            <img src="image lol/Zed_69.jpg" alt="Zed">
+            <img src="image lol/zenin.png" alt="Zenin">
+            <img src="image lol/Ekko_46.jpg" alt="ekko">
+        </div>
+    </div>
+
+    <main class="ranking-main">
+        <!-- Contenu central -->
+        <div class="ranking-content">
+            <div class="page-header">
+                <h1>CLASSEMENT DES CHALLENGERS</h1>
+                <p>Les meilleurs invocateurs de la Faille s'affrontent pour la gloire éternelle</p>
+            </div>
+
+            <!-- Filtres de classement -->
+            <div class="ranking-filters">
+                <select class="filter-select">
+                    <option>Région : Europe Ouest</option>
+                    <option>Région : Europe Nord & Est</option>
+                    <option>Région : Amérique du Nord</option>
+                    <option>Région : Corée</option>
+                    <option>Région : Chine</option>
+                </select>
+                <select class="filter-select">
+                    <option>Type : Solo/Duo</option>
+                    <option>Type : Flex</option>
+                </select>
+                <select class="filter-select">
+                    <option>Rang : Challenger</option>
+                    <option>Rang : Grandmaster</option>
+                    <option>Rang : Master</option>
+                    <option>Rang : Diamant</option>
+                </select>
+            </div>
+
+            <!-- TABLEAU DE CLASSEMENT - COLONNE RANG CENTRÉE -->
+            <div class="ranking-table-container">
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>JOUEUR</th>
+                            <th>RANG</th>
+                            <th>LP</th>
+                            <th>WINRATE</th>
+                            <th>KDA</th>
+                            <th>MAÎTRISE</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <!-- RANG 1 - CHALLENGER -->
+                        <tr class="top-player">
+                            <td class="rank-position">1</td>
+                            <td class="player-name">Faker</td>
+                            <td><span class="rank-tag challenger">Challenger</span></td>
+                            <td class="rank-lp">1567 LP</td>
+                            <td class="rank-winrate">63%</td>
+                            <td class="rank-kda">4.8</td>
+                            <td class="rank-champion">Ahri</td>
+                        </tr>
+                        
+                        <!-- RANG 2 - CHALLENGER -->
+                        <tr>
+                            <td class="rank-position">2</td>
+                            <td class="player-name">Caps</td>
+                            <td><span class="rank-tag challenger">Challenger</span></td>
+                            <td class="rank-lp">1523 LP</td>
+                            <td class="rank-winrate">61%</td>
+                            <td class="rank-kda">5.2</td>
+                            <td class="rank-champion">Yasuo</td>
+                        </tr>
+                        
+                        <!-- RANG 3 - CHALLENGER -->
+                        <tr>
+                            <td class="rank-position">3</td>
+                            <td class="player-name">Hans Sama</td>
+                            <td><span class="rank-tag challenger">Challenger</span></td>
+                            <td class="rank-lp">1489 LP</td>
+                            <td class="rank-winrate">59%</td>
+                            <td class="rank-kda">6.1</td>
+                            <td class="rank-champion">Draven</td>
+                        </tr>
+                        
+                        <!-- RANG 4 - CHALLENGER -->
+                        <tr>
+                            <td class="rank-position">4</td>
+                            <td class="player-name">Rekkles</td>
+                            <td><span class="rank-tag challenger">Challenger</span></td>
+                            <td class="rank-lp">1456 LP</td>
+                            <td class="rank-winrate">58%</td>
+                            <td class="rank-kda">5.7</td>
+                            <td class="rank-champion">Jinx</td>
+                        </tr>
+                        
+                        <!-- RANG 5 - CHALLENGER -->
+                        <tr>
+                            <td class="rank-position">5</td>
+                            <td class="player-name">Perkz</td>
+                            <td><span class="rank-tag challenger">Challenger</span></td>
+                            <td class="rank-lp">1421 LP</td>
+                            <td class="rank-winrate">57%</td>
+                            <td class="rank-kda">4.5</td>
+                            <td class="rank-champion">LeBlanc</td>
+                        </tr>
+                        
+                        <!-- RANG 6 - CHALLENGER -->
+                        <tr>
+                            <td class="rank-position">6</td>
+                            <td class="player-name">Jankos</td>
+                            <td><span class="rank-tag challenger">Challenger</span></td>
+                            <td class="rank-lp">1398 LP</td>
+                            <td class="rank-winrate">56%</td>
+                            <td class="rank-kda">4.2</td>
+                            <td class="rank-champion">Graves</td>
+                        </tr>
+                        
+                        <!-- RANG 7 - GRANDMASTER -->
+                        <tr>
+                            <td class="rank-position">7</td>
+                            <td class="player-name">Wunder</td>
+                            <td><span class="rank-tag grandmaster">Grandmaster</span></td>
+                            <td class="rank-lp">987 LP</td>
+                            <td class="rank-winrate">54%</td>
+                            <td class="rank-kda">3.8</td>
+                            <td class="rank-champion">Camille</td>
+                        </tr>
+                        
+                        <!-- RANG 8 - GRANDMASTER -->
+                        <tr>
+                            <td class="rank-position">8</td>
+                            <td class="player-name">Mikyx</td>
+                            <td><span class="rank-tag grandmaster">Grandmaster</span></td>
+                            <td class="rank-lp">945 LP</td>
+                            <td class="rank-winrate">55%</td>
+                            <td class="rank-kda">4.9</td>
+                            <td class="rank-champion">Thresh</td>
+                        </tr>
+                        
+                        <!-- RANG 9 - GRANDMASTER -->
+                        <tr>
+                            <td class="rank-position">9</td>
+                            <td class="player-name">Humanoid</td>
+                            <td><span class="rank-tag grandmaster">Grandmaster</span></td>
+                            <td class="rank-lp">923 LP</td>
+                            <td class="rank-winrate">53%</td>
+                            <td class="rank-kda">4.1</td>
+                            <td class="rank-champion">Orianna</td>
+                        </tr>
+                        
+                        <!-- RANG 10 - GRANDMASTER -->
+                        <tr>
+                            <td class="rank-position">10</td>
+                            <td class="player-name">Upset</td>
+                            <td><span class="rank-tag grandmaster">Grandmaster</span></td>
+                            <td class="rank-lp">912 LP</td>
+                            <td class="rank-winrate">52%</td>
+                            <td class="rank-kda">5.5</td>
+                            <td class="rank-champion">Aphelios</td>
+                        </tr>
+                        
+                        <!-- RANG 11 - GRANDMASTER -->
+                        <tr>
+                            <td class="rank-position">11</td>
+                            <td class="player-name">Vetheo</td>
+                            <td><span class="rank-tag grandmaster">Grandmaster</span></td>
+                            <td class="rank-lp">876 LP</td>
+                            <td class="rank-winrate">51%</td>
+                            <td class="rank-kda">4.3</td>
+                            <td class="rank-champion">Azir</td>
+                        </tr>
+                        
+                        <!-- RANG 12 - GRANDMASTER -->
+                        <tr>
+                            <td class="rank-position">12</td>
+                            <td class="player-name">Hylissang</td>
+                            <td><span class="rank-tag grandmaster">Grandmaster</span></td>
+                            <td class="rank-lp">843 LP</td>
+                            <td class="rank-winrate">50%</td>
+                            <td class="rank-kda">3.2</td>
+                            <td class="rank-champion">Pyke</td>
+                        </tr>
+                        
+                        <!-- RANG 13 - MASTER -->
+                        <tr>
+                            <td class="rank-position">13</td>
+                            <td class="player-name">Odoamne</td>
+                            <td><span class="rank-tag master">Master</span></td>
+                            <td class="rank-lp">654 LP</td>
+                            <td class="rank-winrate">52%</td>
+                            <td class="rank-kda">3.5</td>
+                            <td class="rank-champion">Renekton</td>
+                        </tr>
+                        
+                        <!-- RANG 14 - MASTER -->
+                        <tr>
+                            <td class="rank-position">14</td>
+                            <td class="player-name">Trymbi</td>
+                            <td><span class="rank-tag master">Master</span></td>
+                            <td class="rank-lp">632 LP</td>
+                            <td class="rank-winrate">51%</td>
+                            <td class="rank-kda">4.0</td>
+                            <td class="rank-champion">Rakan</td>
+                        </tr>
+                        
+                        <!-- RANG 15 - MASTER -->
+                        <tr>
+                            <td class="rank-position">15</td>
+                            <td class="player-name">Larssen</td>
+                            <td><span class="rank-tag master">Master</span></td>
+                            <td class="rank-lp">612 LP</td>
+                            <td class="rank-winrate">49%</td>
+                            <td class="rank-kda">4.7</td>
+                            <td class="rank-champion">Ryze</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Légende des rangs -->
+            <div class="rank-legend">
+                <span class="legend-item">
+                    <span class="legend-color challenger"></span> Challenger
+                </span>
+                <span class="legend-item">
+                    <span class="legend-color grandmaster"></span> Grandmaster
+                </span>
+                <span class="legend-item">
+                    <span class="legend-color master"></span> Master
+                </span>
+                <span class="legend-item">
+                    <span class="legend-color diamond"></span> Diamant
+                </span>
+            </div>
+
+            <!-- Bouton retour harmonisé -->
+            <div class="back-btn-bottom">
+                <button class="back-nav-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-arrow-left"></i> RETOUR À L'ACCUEIL
+                </button>
+            </div>
+        </div>
+    </main>
+     
+    <!-- les info enbas de la pages-->
+    <footer>
+        <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> hasha-rank@League.com</span>
+            <span><i class="fas fa-phone"></i> +33 1 02 03 04 05</span>
+            <span><i class="fas fa-map-marker-alt"></i> Paris, France</span>
+            <span><i class="far fa-copyright"></i> 2026 League of Legends Fan Site</span>
+        </div>
+    </footer>
+
+    <!-- JavaScript pour le menu hamburger -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function openMenu() {
+                hamburger.classList.add('active');
+                navMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (hamburger.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            menuOverlay.addEventListener('click', closeMenu);
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
